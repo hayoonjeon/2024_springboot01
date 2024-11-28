@@ -30,7 +30,8 @@ public class GuestBookAPIController {
   }
   //상세보기
   @GetMapping("/detail")
-  public GuestBookVO getGuestBookDetail(String gb_idx) {
+  @ResponseBody
+  public GuestBookVO getGuestBookDetail(@RequestParam("gb_idx") String gb_idx) {
       return guestBookService.getGuestBookDetail(gb_idx);
   }
   
